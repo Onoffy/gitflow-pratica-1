@@ -135,3 +135,69 @@ footer {
     align-self: flex-start;
   }
 }
+
+/* Formulário */
+.task-form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Input */
+.task-input {
+  flex: 1;
+  min-width: 220px;
+
+  padding: 0.9rem 1rem;
+
+  border: 1px solid var(--cor-borda);
+  border-radius: 10px;
+
+  font-size: 1rem;
+
+  outline: none;
+
+  transition: 0.2s ease;
+}
+
+/* Efeito ao clicar */
+.task-input:focus {
+  border-color: var(--cor-primaria);
+
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+/* Botão */
+.add-button {
+  background-color: var(--cor-primaria);
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+
+  padding: 0.9rem 1.3rem;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+/* Hover do botão */
+.add-button:hover {
+  filter: brightness(1.1);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .task-form {
+    flex-direction: column;
+  }
+
+  .add-button {
+    width: 100%;
+  }
+}
