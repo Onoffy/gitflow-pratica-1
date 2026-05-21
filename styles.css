@@ -201,3 +201,72 @@ footer {
     width: 100%;
   }
 }
+
+/* Container do filtro */
+.filter-container {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Botões do filtro */
+.filter-button {
+  background-color: white;
+  border: 1px solid var(--cor-borda);
+
+  padding: 0.7rem 1rem;
+
+  border-radius: 999px;
+
+  font-size: 0.95rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+/* Hover */
+.filter-button:hover {
+  background-color: #eff6ff;
+  border-color: var(--cor-primaria);
+  color: var(--cor-primaria);
+}
+
+/* Botão ativo */
+.filter-button.active {
+  background-color: var(--cor-primaria);
+  color: white;
+  border-color: var(--cor-primaria);
+}
+
+/* Badges */
+.status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 100px;
+
+  padding: 0.45rem 0.9rem;
+
+  border-radius: 999px;
+
+  font-size: 0.85rem;
+  font-weight: bold;
+
+  letter-spacing: 0.3px;
+}
+
+/* Badge pendente */
+.status {
+  background-color: #dbeafe;
+  color: var(--cor-primaria);
+}
+
+/* Badge concluída */
+.status.done {
+  background-color: #dcfce7;
+  color: var(--cor-sucesso);
+}
