@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,7 @@
   <!-- Arquivo CSS externo -->
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
   <!-- Header -->
@@ -24,28 +26,44 @@
       <section class="task-section">
         <h2>Tarefas Pendentes</h2>
 
-        <div class="task-list">
+        <!-- Formulário -->
+        <div class="task-form">
+          <input type="text" id="taskInput" placeholder="Digite uma tarefa..." />
 
-          <!-- Tarefa 1 -->
+          <button id="addTaskBtn">
+            Adicionar
+            <span class="spinner"></span>
+          </button>
+        </div>
+
+        <small id="errorMessage"></small>
+
+        <div class="task-list" id="taskList">
+
           <article class="task-card">
             <div class="task-info">
               <h3>Estudar HTML e CSS</h3>
               <p>Revisar Flexbox, Grid e responsividade.</p>
             </div>
+
             <span class="status">Pendente</span>
           </article>
 
-          <!-- Tarefa 2 -->
           <article class="task-card">
             <div class="task-info">
               <h3>Finalizar projeto da faculdade</h3>
               <p>Entregar o sistema de lista de tarefas.</p>
             </div>
-            <span class="status done">Concluída</span>
+
+            <span class="status done">
+              Concluída
+            </span>
           </article>
 
         </div>
       </section>
+
+      <script src="script.js"></script>
     </div>
   </main>
 
@@ -57,4 +75,5 @@
   </footer>
 
 </body>
+
 </html>
