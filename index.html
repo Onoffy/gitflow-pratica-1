@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,7 @@
   <!-- Arquivo CSS externo -->
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
   <!-- Header -->
@@ -23,58 +25,45 @@
     <div class="container">
       <section class="task-section">
         <h2>Tarefas Pendentes</h2>
-<!-- Formulário de adicionar tarefa -->
-<form class="task-form">
-  <input 
-    type="text" 
-    placeholder="Digite uma nova tarefa..."
-    class="task-input"
-  />
 
-  <button type="submit" class="add-button">
-    Adicionar
-  </button>
-</form>
-        <!-- Filtro de tarefas -->
-        <div class="filter-container">
+        <!-- Formulário -->
+        <div class="task-form">
+          <input type="text" id="taskInput" placeholder="Digite uma tarefa..." />
 
-          <button class="filter-button active">
-            Todas
+          <button id="addTaskBtn">
+            Adicionar
+            <span class="spinner"></span>
           </button>
+        </div>
 
-          <button class="filter-button">
-            Pendentes
-          </button>
+        <small id="errorMessage"></small>
 
-          <button class="filter-button">
-            Concluídas
-          </button>
+        <div class="task-list" id="taskList">
 
-        </div>        
-
-
-        <div class="task-list">
-
-          <!-- Tarefa 1 -->
           <article class="task-card">
             <div class="task-info">
               <h3>Estudar HTML e CSS</h3>
               <p>Revisar Flexbox, Grid e responsividade.</p>
             </div>
+
             <span class="status">Pendente</span>
           </article>
 
-          <!-- Tarefa 2 -->
           <article class="task-card">
             <div class="task-info">
               <h3>Finalizar projeto da faculdade</h3>
               <p>Entregar o sistema de lista de tarefas.</p>
             </div>
-            <span class="status done">Concluída</span>
+
+            <span class="status done">
+              Concluída
+            </span>
           </article>
 
         </div>
       </section>
+
+      <script src="script.js"></script>
     </div>
   </main>
 
@@ -86,4 +75,5 @@
   </footer>
 
 </body>
+
 </html>
