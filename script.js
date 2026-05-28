@@ -4,6 +4,43 @@ const lista = document.getElementById("taskList");
 const erro = document.getElementById("errorMessage");
 
 // ==========================
+// DARK MODE
+// ==========================
+
+const themeToggle = document.getElementById("themeToggle");
+
+// pega tema salvo
+let temaSalvo = localStorage.getItem("tema");
+
+// aplica tema salvo
+if (temaSalvo === "dark") {
+    document.body.classList.add("dark");
+    themeToggle.innerHTML = "☀️ Light Mode";
+}
+
+// troca tema
+themeToggle.addEventListener("click", () => {
+
+    document.body.classList.toggle("dark");
+
+    // verifica tema atual
+    const darkAtivo =
+        document.body.classList.contains("dark");
+
+    // salva no localStorage
+    localStorage.setItem(
+        "tema",
+        darkAtivo ? "dark" : "light"
+    );
+
+    // altera texto botão
+    themeToggle.innerHTML =
+        darkAtivo
+            ? "☀️ Light Mode"
+            : "🌙 Dark Mode";
+});
+
+// ==========================
 // LOCAL STORAGE
 // ==========================
 

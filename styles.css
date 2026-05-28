@@ -206,6 +206,62 @@ footer {
   }
 }
 
+/* ==========================
+   DARK MODE
+========================== */
+
+body.dark {
+  --cor-fundo: #0f172a;
+  --cor-card: #1e293b;
+  --cor-texto: #f1f5f9;
+  --cor-texto-secundario: #cbd5e1;
+  --cor-borda: #334155;
+}
+
+/* botão do tema */
+.theme-btn {
+  margin-top: 1rem;
+  background: white;
+  color: #0f172a;
+  border: none;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: .3s;
+}
+
+.theme-btn:hover {
+  opacity: .9;
+}
+
+/* input dark */
+body.dark .task-form input {
+  background: #0f172a;
+  color: white;
+}
+
+/* footer dark */
+body.dark footer {
+  background: #020617;
+}
+
+/* status dark */
+body.dark .status {
+  background: #1d4ed8;
+  color: white;
+}
+
+body.dark .status.done {
+  background: #166534;
+  color: white;
+}
+
+/* cards dark */
+body.dark .task-card {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .3);
+}
+
 /* Responsivo */
 @media(max-width:600px) {
 
