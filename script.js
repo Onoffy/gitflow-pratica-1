@@ -3,6 +3,17 @@ const btn = document.getElementById("addTaskBtn");
 const lista = document.getElementById("taskList");
 const erro = document.getElementById("errorMessage");
 
+// ==========================
+// LOCAL STORAGE
+// ==========================
+
+// fallback para array vazio caso venha null
+let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+
+// renderiza tarefas salvas
+renderizarTarefas();
+
+// evento botão
 btn.addEventListener("click", adicionarTarefa);
 
 function adicionarTarefa() {
@@ -25,22 +36,23 @@ function adicionarTarefa() {
     // simula carregamento
     setTimeout(() => {
 
-        const tarefa = document.createElement("article");
+        const novaTarefa = {
+            titulo: texto,
+            descricao: "Tarefa adicionada pelo usuário.",
+            status: "Pendente"
+        };
 
-        tarefa.classList.add("task-card");
+        // adiciona no array
+        tarefas.unshift(novaTarefa);
 
-        tarefa.innerHTML = `
-            <div class="task-info">
-                <h3>${texto}</h3>
-                <p>Tarefa adicionada pelo usuário.</p>
-            </div>
+        // salva no localStorage
+        localStorage.setItem(
+            "tarefas",
+            JSON.stringify(tarefas)
+        );
 
-            <span class="status">
-                Pendente
-            </span>
-        `;
-
-        lista.prepend(tarefa);
+        // atualiza tela
+        renderizarTarefas();
 
         input.value = "";
 
@@ -48,5 +60,32 @@ function adicionarTarefa() {
         btn.disabled = false;
 
     }, 1000);
+
+}
+
+function renderizarTarefas() {
+
+    lista.innerHTML = "";
+
+    tarefas.forEach((tarefa) => {
+
+        const card = document.createElement("article");
+
+        card.classList.add("task-card");
+
+        card.innerHTML = `
+            <div class="task-info">
+                <h3>${tarefa.titulo}</h3>
+                <p>${tarefa.descricao}</p>
+            </div>
+
+            <span class="status">
+                ${tarefa.status}
+            </span>
+        `;
+
+        lista.appendChild(card);
+
+    });
 
 }
